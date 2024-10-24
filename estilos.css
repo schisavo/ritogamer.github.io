@@ -1,0 +1,485 @@
+:root{ /* PERMITE DEFINIR VARAIBLES */
+  --color1: rgb(255, 50, 60); /* VARIABLE 1 NOMBRE: VALOR QUE TENDRA*/
+  --color2: rgba(42, 221, 253, 0.877);
+  --color3: rgba(175, 2, 255, 0.623);
+  --fondo: #121222;
+  --titulos: 33px;
+  --subtitulos:20px;
+  --margenes: 60px;
+  --espacios: 10px;
+  --espacios-contenido:45px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+  font-family: 'open sans';
+  background: var(--fondo);
+}
+
+/* icono modificaciones */
+
+.icono:active{
+  cursor: progress;
+}
+
+.card{
+  padding-top: 10px;
+}
+
+img{
+  vertical-align: top;
+  margin-bottom: 20px;
+}
+
+img:hover{
+  opacity: .6;
+}
+
+
+/* Header */
+
+header{
+  width: 100%; /* ANCHO */
+  height:600px; /* ALTO */
+  background: linear-gradient(to bottom, /* CREA DEGRADADO */
+  rgba(183, 0, 255, 0.856), /* EL COLOR DEBE TENER OPACIDAD */
+  rgba(0, 47, 255, 0.876),
+  rgba(229, 255, 0, 0.445)), 
+  url(img/Imagenes/fondo.jpg);
+  background-attachment: fixed; /* FIJA LA IMAGEN PARA Q NO SE MUEVA CON LA PAGINA */
+  background-position: center; /* CENTRA LA IMAGEN */
+  background-size: cover; /* CUBRE TODO EL FONDO */
+
+}
+
+
+
+/* a continuación van las líneas para darle estilo al nav
+por favor explique las líneas principales
+
+*/
+
+
+
+/*a continuacióne estilos para los links del nav */
+/*por favor explique las líneas principales*/
+
+
+nav{
+  width: 100%; /* 100% DEL ANCHO DE EL HEADER */
+  position: fixed; /* SE FIJA EL NAV A LA PARTE SUPERIOR */
+  box-shadow: 0 0 20px 0 rgba(55, 186, 247, 0.5); /* SOMBRA */
+}
+.nav1{
+  background: transparent; /* FONDO TRANSPARENTE */
+  height: 80px; /* ALTURA FIJA O ABSOLUTA EN CUALQUIER DISPOSITIVO */
+  color:#fff; /*color del texto dentro de este nav*/
+}
+
+
+
+/*a continuacióne estilos para los textos principales */
+/*por favor explique las líneas principales*/
+
+
+nav .enlaces a{
+  display: inline-block; /* LO ORGANIZA EN UNA LINEA HORIZONTAL*/
+  padding: 5px 0; /*SE AÑADE ESPACIADO DENTRO DE LOS A ARRIBA Y ABAJO*/
+  margin-right: 17px;/* SE AÑADE UNA MARGEN POR FUERA DE EL ELEMENTO A LA DERECHA */
+  font-size: 17px;/* TAMAÑO DE LA LETRA */
+  font-weight: 300;/* GROSOR DE LA LETRA  */
+  text-decoration: none;/* LE QUITA LOS SIMBOLOS Y EL RESALTADO */
+  border-bottom: 3px solid transparent;/* HACE UN BORDE ABAJO DEL ELEMENTO PARA CUANDO SE PASE EL CURSOR */
+  color: inherit; /* se hereda el color de texto del nav como se definió ya en nav1 */
+}
+
+
+nav .enlaces a:hover{ /* EVENTOS QUE PASARAN AL PASAR EL MOUSE POR ENCIMA */
+  border-bottom: 3px solid #00d8f5; /* COLOR DE EL BORDE AL PASAR EL CURSOR */
+  transition: 0.6s; /* TIEMPO DE LA TRANCICION */
+  color: aqua;
+}
+
+
+/* Estilos para la sección principal o Main 
+Explique las líneas esenciales del css
+*/
+
+
+.contenedor-nav{
+  display: flex; /* DISPONE LOS ELEMENTOS UNO AL LADO DE EL OTRO */
+  margin: auto; 
+  width: 90%; /* ANCHO CON RESPECTO AL PADRE */
+  justify-content: space-between; /* AÑADE UN ESPACIO ENTRE LOS OBJETOS */
+  align-items: center;
+  max-width:1000px;
+  height:inherit; /* HEREDA LA ALTURA DE EL PADRE */
+  overflow: hidden; /* SI ALGUN ELEMENTO DEL DIV ES MAS GRANDE QUE EL DIV MISMO, LO QUE SOBRE DE EL ESTARA OCULTO */
+}
+
+.logo, .logo img{
+  height: 80px;;
+  border-radius: 50%;
+}/* MISMA ALTURA PARA EL CONTENEDOR Y LA IMAGEN */
+
+
+.icono{
+  display: none;
+  font-size: 24px;
+  padding: 23.5px 20px;
+}
+
+
+
+/*se usa @media para especificar estilos que solo se reflejarán si se cumplen ciertas condiciones*/
+@media screen and (max-width: 700px){                  /*debe ser una pantalla y no tener más de 700px de ancho*/
+  
+  .nav2{
+    background: var(--fondo);
+    height:100px;
+    color:#000; /*color del texto dentro de este segundo estilo para el nav*/
+  }
+
+  .icono{
+    display:block;
+    cursor: pointer;
+  }
+
+  .enlaces{
+    position: fixed;
+    top:80px;
+    background: #2c3e50; /*color de fondo del contenedor de los enlaces del nav*/
+    left: 0; /*dentro del nav por el lado izquierdo no tednrá margen*/
+    height: 100%;
+    transition: 1s;
+    width: 0;  /*esconde el div ya que el ancho es 0*/
+    overflow: hidden; /*oculta los textos*/
+  }
+
+  .enlaces a{
+    display: block;
+    width: 100%;  /*el 100% de la caja enlaces*/
+    height: 50px;    /*altura de la caja elemento "a"*/
+    padding: 20px;
+    text-align: center;
+    background: #34495e; /*color de fondo de la caja elemento "a"*/
+    color:#fff;
+  }
+
+  .content-card{     /*2     */
+    width: 48%;     /*se redujo el ancho del content-card */
+    margin-bottom:var(--margenes);
+  }
+
+  :root{
+    --margenes: 30px;
+  }
+
+}
+
+@media screen and (max-width: 500px){
+  :root{
+    --espacios-contenido: 25px;
+  }
+
+  .content-card{   /*3     */
+    width: 90%;   /*se aumentó el tamaño del content-card  */
+  }
+
+  .caja-servicios{
+    width: 90%;
+    margin-bottom: var(--margenes);
+  }
+
+  .cont-work{
+    width: 85%;
+  }
+  .iconos{
+    margin: auto;
+  }
+}
+
+
+
+.contenedor{
+  margin: auto;
+  padding: var(--margenes);
+  width: 90%;
+  text-align: center;
+  max-width: 1000px;
+  
+  overflow: hidden;
+}
+
+.contenedor h3{
+  font-size: var(--titulos);
+  color: var(--color1);
+  margin-bottom: var(--espacios);
+}
+.contenedor p{
+  font-size: var(--subtitulos);
+  font-weight: 300;
+  color: var(--color1);
+}
+
+
+.after::after{
+  content: " ";
+  display: block;
+  margin: auto;
+  margin-top: var(--espacios);
+  width: 100px;
+  height: 2px;
+  background: var(--color1);
+  margin-bottom: var(--color1);
+}
+
+.card{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.content-card{
+  width: 21%;
+  box-shadow: 0 0 6px 0 rgba(4, 23, 110,0.5);
+  overflow: hidden;
+  height: 400px;
+  background-color: black;
+  color: white;
+}
+.content-card:hover{
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  opacity: .7;
+}
+.textos{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+  text-align: center;
+}
+
+.textos>h1{font-size: 8vw;}
+.textos>h2{font-size:40px; font-weight: 300;}
+
+
+.people{
+  height: 80%;
+}
+
+.content-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.texto-team{
+  height: 20%;
+  width: 100%;
+  padding: var(--espacios) 0;
+}
+/*5*/
+.about{
+  background: url(img/Imagenes/minecraft.jpg) 30%;
+
+}
+
+.servicios{
+  display: flex;
+  color: #fff;
+  justify-content: space-between;
+  margin: auto;
+  flex-wrap: wrap;
+}
+.caja-servicios{
+  margin: auto;
+  text-align: center;
+}
+.caja-servicios>h4{
+  margin-bottom: var(--espacios);
+  font-size: 20px;
+  color: black;
+}
+
+.botones-work{
+  overflow: hidden;
+  padding-top: 16px;
+}
+.botones-work li{
+  display: inline-block;
+  text-align: center;
+  margin-left: var(--espacios);
+  margin-bottom: var(--espacios-contenido);
+  padding: 6px 12px;
+  border: 1px solid var(--color1);
+  list-style: none;
+  color: var(--color3);
+}
+.botones-work li:hover{
+  background-color: var(--color1);
+  color: white;
+  cursor: pointer;
+}
+.botones-work .active{
+  background-color: var(--color1);
+  color: white;
+}
+
+
+/*6*/
+.galeria-work{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.cont-work{
+  width: 31%;
+  box-shadow: 0 0 6px 0 rgba(0,0,0,.5);
+  height: 300px;
+  overflow: hidden;
+  margin-bottom: var(--espacios-contenido);
+}
+.cont-work:hover{
+  box-shadow: 0 0 40px 0 rgba(169, 175, 226, 0.5);
+}
+
+.img-work{
+  height: 90%;
+  width: 100%;
+}
+
+.img-work img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.textos-work{
+  height: 10%;
+  background-color: black;
+}
+.textos-work h4{
+  line-height: 30px;
+  font-weight:300;
+  color: red;
+}
+
+/*7*/
+footer{
+  background: url(img/Imagenes/play.gif);
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: 100%;
+}
+
+.marca-logo{
+  width: 20%;
+  margin: auto;
+  margin-bottom: var(--espacios);
+}
+.marca-logo img{
+  width: 50%;
+}
+
+.iconos{
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.fab{
+  font-size: 60px;
+  color: red;
+  margin-bottom: var(--espacios);
+  display: inline-block;
+}
+
+.fab:hover{
+  color: #fff;
+  cursor: pointer;
+}
+
+.fab:active{
+  cursor: progress;
+}
+footer p{
+  margin-top: var(--espacios);
+}
+.fab_fa-game{
+  background: url(img/Imagenes/controlpls.png);
+
+}
+.icono:hover{
+  cursor: pointer;
+}
+/*8*/
+@media screen and (max-width:700px){
+  .nav2{
+    color: white;
+  }
+  .icono{
+    display: block;
+    cursor: pointer;
+  }
+  .enlaces{
+    position: fixed;
+    top: 80px;
+    background: #2c3e50;
+    left: 0;
+    height: 100%;
+    transition: 1s;
+    width: 0;
+    overflow: hidden;
+  }
+  .enlaces a{
+    width: 100%;
+    
+  }
+  /*9*/
+  .textos>h1{font-size: 70px;}
+  .textos>h2{font-size: 35px;}
+
+  .content-card{
+    width: 48%;
+    margin-bottom: var(--margenes);
+  }
+  :root{
+    --margenes:30px;
+  }
+}
+
+/*9*/
+@media screen and(max-width: 500px){
+  :root{
+    --espacioa-contenido:25px;
+  }
+  .content-card{
+    width: 90%;
+  }
+  .caja-servicios{
+    width: 90%;
+    margin-bottom: var(--margenes);
+  }
+  .cont-work{
+    width: 85%;
+  }
+  .marca-logo{
+    width: 80%;
+  }
+  .iconos{
+    margin: auto;
+  }
+}
